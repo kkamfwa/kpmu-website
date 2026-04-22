@@ -1,4 +1,4 @@
-# KPMU University Website Blueprint
+# KPMU University College Website Blueprint
 
 ## 1. Institutional Positioning
 
@@ -55,7 +55,7 @@ Headline:
 AI-Powered Education for the Future of Africa
 
 Subheadline:
-KPMU University combines practical education, digital learning, and real-world innovation to prepare students for leadership in agriculture, business, and technology.
+KPMU University College combines practical education, digital learning, and real-world innovation to prepare students for leadership in agriculture, business, and technology.
 
 Primary CTA:
 Apply Now
