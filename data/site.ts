@@ -1,6 +1,7 @@
 import {
   Bot,
   BookOpen,
+  Sprout,
   Building2,
   Cpu,
   GraduationCap,
@@ -63,13 +64,13 @@ export const programmes = [
     icon: Bot,
     items: ["Computer Science", "Data & AI Fundamentals", "Cybersecurity"]
   },
-  {
-    title: "School of Education & Social Impact",
-    description:
-      "Shape future educators, community leaders, and development professionals with locally relevant, practical training.",
-    icon: BookOpen,
-    items: ["Education", "Community Development", "Public Policy"]
-  }
+ {
+  title: "School of Agriculture",
+  description:
+    "Develop practical, modern agricultural professionals with expertise in crop production, agribusiness, and sustainable farming systems.",
+  icon: Sprout,
+  items: ["Agricultural Science", "Agribusiness Management", "Sustainable Farming Systems"]
+}
 ];
 
 export const pillars = [
@@ -107,8 +108,8 @@ export const admissionsSteps = [
 ];
 
 export const contactDetails = [
-  { label: "Email", value: "admissions@kpmu.edu.zm" },
-  { label: "Phone", value: "+260 000 000 000" },
+  { label: "Email", value: "info@kpmuc.com" },
+  { label: "Phone", value: "+260 572 194 480" },
   { label: "Location", value: "Lusaka, Zambia" }
 ];
 
