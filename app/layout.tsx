@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className="fixed left-0 top-0 z-50 w-full">
-          <div className="border-b border-white/10 bg-[#0b3b5d]/88 backdrop-blur-md">
+          <div className="border-b border-white/10 bg-[#0b3b5d] shadow-[0_10px_30px_rgba(11,59,93,0.18)]">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
               <Link href="/" className="flex flex-col leading-tight">
                 <span className="text-lg font-semibold text-white">
