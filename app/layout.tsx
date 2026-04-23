@@ -17,7 +17,7 @@ export default function RootLayout({
 
         {/* NAVBAR */}
         <header className="fixed top-0 left-0 w-full z-50">
-          <div className="backdrop-blur-md bg-black/30 border-b border-white/10">
+          <div className="backdrop-blur-md bg-[#0b3b5d]/85 border-b border-white/10">
             <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
 
               {/* Logo */}
@@ -31,7 +31,7 @@ export default function RootLayout({
               </div>
 
               {/* Navigation */}
-              <nav className="hidden md:flex items-center gap-8 text-white/85 text-sm">
+              <nav className="hidden md:flex items-center gap-8 text-white/90 text-sm">
                 <Link href="/" className="hover:text-white transition">Home</Link>
                 <Link href="/about" className="hover:text-white transition">About</Link>
                 <Link href="/programmes" className="hover:text-white transition">Programmes</Link>
@@ -44,7 +44,7 @@ export default function RootLayout({
               <div>
                 <Link
                   href="/admissions"
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-5 py-2.5 text-sm font-medium hover:bg-white/90 transition"
+                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#0b3b5d] px-5 py-2.5 text-sm font-medium hover:bg-white/90 transition"
                 >
                   Apply Now →
                 </Link>
@@ -54,7 +54,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* PAGE CONTENT */}
+        {/* CONTENT */}
         <main className="pt-24">
           {children}
         </main>
