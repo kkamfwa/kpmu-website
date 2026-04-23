@@ -12,16 +12,184 @@ html {
 
 body {
   min-height: 100vh;
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(196, 154, 58, 0.08), transparent 18%),
-    linear-gradient(to bottom, #ffffff, #f9fcfd);
+    radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.08), transparent 22%),
+    radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.08), transparent 18%),
+    radial-gradient(circle at 70% 75%, rgba(15, 118, 110, 0.08), transparent 20%),
+    linear-gradient(to bottom, #ffffff 0%, #f8fafc 42%, #eef2f7 100%);
 }
 
 * {
-  border-color: rgba(9, 34, 53, 0.08);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
 }
 
 ::selection {
-  background: rgba(15, 76, 92, 0.18);
+  background: rgba(15, 118, 110, 0.18);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.03em;
+}
+
+a,
+button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+section {
+  position: relative;
+}
+
+.kpmu-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.kpmu-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0)),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.32), transparent 40%);
+}
+
+.kpmu-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
+  background-position: center;
+}
+
+.kpmu-glass {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.kpmu-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.kpmu-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 22px 50px rgba(15, 23, 42, 0.12),
+    0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.kpmu-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(10px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.kpmu-orb-1 {
+  top: -90px;
+  right: -40px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle at 30% 30%, rgba(15, 118, 110, 0.28), rgba(15, 118, 110, 0.02) 70%);
+}
+
+.kpmu-orb-2 {
+  left: -80px;
+  bottom: -120px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.01) 72%);
+}
+
+.kpmu-panel-dark {
+  background:
+    linear-gradient(160deg, #082f49 0%, #0f3d56 38%, #155e75 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 24px 60px rgba(8, 47, 73, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.kpmu-stat {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.kpmu-button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: #082f49;
+  color: white;
+  padding: 0.9rem 1.4rem;
+  box-shadow: 0 12px 24px rgba(8, 47, 73, 0.18);
+}
+
+.kpmu-button-primary:hover {
+  transform: translateY(-1px);
+  background: #0b3b5d;
+}
+
+.kpmu-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  color: #0f172a;
+}
+
+.kpmu-button-secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.kpmu-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 650;
+  line-height: 1.02;
+}
+
+.kpmu-subtle {
+  color: #475569;
+}
+
+.kpmu-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.12), transparent);
+}
+
+@media (max-width: 768px) {
+  .kpmu-orb-1,
+  .kpmu-orb-2 {
+    opacity: 0.45;
+  }
+}
