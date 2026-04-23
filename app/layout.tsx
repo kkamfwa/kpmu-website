@@ -14,51 +14,53 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-
-        {/* NAVBAR */}
-        <header className="fixed top-0 left-0 w-full z-50">
-          <div className="backdrop-blur-md bg-[#0b3b5d]/85 border-b border-white/10">
-            <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-
-              {/* Logo */}
-              <div className="flex flex-col leading-tight">
-                <span className="text-white font-semibold text-lg">
+        <header className="fixed left-0 top-0 z-50 w-full">
+          <div className="border-b border-white/10 bg-[#0b3b5d]/88 backdrop-blur-md">
+            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+              <Link href="/" className="flex flex-col leading-tight">
+                <span className="text-lg font-semibold text-white">
                   KPMU University College
                 </span>
-                <span className="text-white/70 text-xs tracking-[0.3em]">
+                <span className="text-xs tracking-[0.3em] text-white/70">
                   ZAMBIA
                 </span>
-              </div>
+              </Link>
 
-              {/* Navigation */}
-              <nav className="hidden md:flex items-center gap-8 text-white/90 text-sm">
-                <Link href="/" className="hover:text-white transition">Home</Link>
-                <Link href="/about" className="hover:text-white transition">About</Link>
-                <Link href="/programmes" className="hover:text-white transition">Programmes</Link>
-                <Link href="/admissions" className="hover:text-white transition">Admissions</Link>
-                <Link href="/learning-experience" className="hover:text-white transition">Learning Experience</Link>
-                <Link href="/contact" className="hover:text-white transition">Contact</Link>
+              <nav className="hidden items-center gap-8 text-sm text-white/90 md:flex">
+                <Link href="/" className="transition hover:text-white">
+                  Home
+                </Link>
+                <Link href="/about" className="transition hover:text-white">
+                  About
+                </Link>
+                <Link href="/programmes" className="transition hover:text-white">
+                  Programmes
+                </Link>
+                <Link href="/admissions" className="transition hover:text-white">
+                  Admissions
+                </Link>
+                <Link
+                  href="/learning-experience"
+                  className="transition hover:text-white"
+                >
+                  Learning Experience
+                </Link>
+                <Link href="/contact" className="transition hover:text-white">
+                  Contact
+                </Link>
               </nav>
 
-              {/* CTA */}
-              <div>
-                <Link
-                  href="/admissions"
-                  className="inline-flex items-center gap-2 rounded-full bg-white text-[#0b3b5d] px-5 py-2.5 text-sm font-medium hover:bg-white/90 transition"
-                >
-                  Apply Now →
-                </Link>
-              </div>
-
+              <Link
+                href="/admissions"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0b3b5d] transition hover:bg-white/90"
+              >
+                Apply Now →
+              </Link>
             </div>
           </div>
         </header>
 
-        {/* CONTENT */}
-        <main className="pt-24">
-          {children}
-        </main>
-
+        <main className="pt-24">{children}</main>
       </body>
     </html>
   );
