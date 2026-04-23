@@ -60,41 +60,51 @@ const admissionsSteps = [
 export default function HomePage() {
   return (
     <main>
-      <section className="relative flex h-[90vh] items-center overflow-hidden text-white">
+      <section className="relative flex min-h-[92vh] items-center overflow-hidden text-white">
         <div className="absolute inset-0">
           <img
             src="/hero.jpg"
             alt="KPMU Campus"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/58 to-black/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 w-full px-6">
+        <div className="relative z-10 w-full px-6 py-20">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md">
+              <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white/95 backdrop-blur-md">
                 HEA accreditation readiness built into the institution strategy
               </div>
 
-              <h1 className="mt-6 text-5xl font-semibold leading-[0.95] md:text-7xl">
+              <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.93] md:text-7xl">
                 KPMU University College
               </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
                 A premium higher education destination in Zambia combining academic
                 integrity, practical programmes, and AI-powered learning for the
                 next generation of leaders.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-9 flex flex-wrap gap-4">
                 <Link href="/admissions" className="kpmu-button-primary">
                   Apply Now <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                <Link href="/programmes" className="kpmu-button-secondary">
+                <Link
+                  href="/programmes"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-white/16"
+                >
                   Explore Programmes
                 </Link>
+              </div>
+
+              <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/75">
+                <span>Purpose-built for quality assurance</span>
+                <span>Industry relevance</span>
+                <span>Modern student experience</span>
               </div>
             </div>
           </div>
