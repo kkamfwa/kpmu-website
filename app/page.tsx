@@ -28,13 +28,6 @@ const highlights = [
   },
 ];
 
-const stats = [
-  { value: "3", label: "Core academic schools" },
-  { value: "AI", label: "Digital-first academic direction" },
-  { value: "24/7", label: "Modern learner engagement vision" },
-  { value: "HEA", label: "Readiness-led institutional build" },
-];
-
 const modelCards = [
   {
     title: "Agriculture",
@@ -67,63 +60,41 @@ const admissionsSteps = [
 export default function HomePage() {
   return (
     <main>
-      <section className="kpmu-shell kpmu-grid overflow-hidden px-6 py-24 md:py-32">
-        <div className="kpmu-orb kpmu-orb-1" />
-        <div className="kpmu-orb kpmu-orb-2" />
+      <section className="relative flex h-[90vh] items-center overflow-hidden text-white">
+        <div className="absolute inset-0">
+          <img
+            src="/hero.jpg"
+            alt="KPMU Campus"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
 
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="relative z-10">
-            <div className="kpmu-glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-slate-700">
-              <ShieldCheck className="h-4 w-4 text-teal-700" />
-              HEA accreditation readiness built into the institution strategy
-            </div>
-
-            <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.95] text-slate-950 md:text-7xl">
-              KPMU University College
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-              A premium higher education destination in Zambia combining academic
-              integrity, practical programmes, and AI-powered learning for the
-              next generation of leaders.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/admissions" className="kpmu-button-primary">
-                Apply Now <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <Link href="/programmes" className="kpmu-button-secondary">
-                Explore Programmes
-              </Link>
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
-              <span>Purpose-built for quality assurance</span>
-              <span>Industry relevance</span>
-              <span>Modern student experience</span>
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="kpmu-panel-dark relative rounded-[2rem] p-6 md:p-8">
-              <div className="mb-6 text-xs uppercase tracking-[0.3em] text-teal-100/80">
-                Why KPMU
+        <div className="relative z-10 w-full px-6">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md">
+                HEA accreditation readiness built into the institution strategy
               </div>
 
-              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Designed for a confident, future-ready student journey
-              </h2>
+              <h1 className="mt-6 text-5xl font-semibold leading-[0.95] md:text-7xl">
+                KPMU University College
+              </h1>
 
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="kpmu-stat rounded-[1.35rem] p-5">
-                    <div className="text-4xl font-semibold">{stat.value}</div>
-                    <div className="mt-2 text-sm leading-6 text-slate-100/85">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85 md:text-xl">
+                A premium higher education destination in Zambia combining academic
+                integrity, practical programmes, and AI-powered learning for the
+                next generation of leaders.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/admissions" className="kpmu-button-primary">
+                  Apply Now <ArrowRight className="h-4 w-4" />
+                </Link>
+
+                <Link href="/programmes" className="kpmu-button-secondary">
+                  Explore Programmes
+                </Link>
               </div>
             </div>
           </div>
