@@ -31,11 +31,11 @@ export default function ProgrammePage({
           {programme.title}
         </h1>
 
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
+        <p className="mt-4 leading-7 text-white/90">
           {programme.description}
         </p>
 
-        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+          <div className="mt-10 rounded-3xl bg-[#0B3D5C] p-8 text-white shadow-xl">
           <h2 className="text-2xl font-semibold text-slate-950">
             What you will study
           </h2>
