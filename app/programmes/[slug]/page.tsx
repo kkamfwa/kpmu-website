@@ -19,6 +19,21 @@ export default function ProgrammePage({
     return <div className="p-10">Programme not found</div>;
   }
 
+  const facts =
+    programme.title === "BSc Agriculture"
+      ? [
+          { label: "Duration", value: "4 Years" },
+          { label: "Study Mode", value: "Full-Time / Blended Learning" },
+          { label: "Intake", value: "2026 Intake" },
+          { label: "Qualification Level", value: "Undergraduate Degree" },
+        ]
+      : [
+          { label: "Duration", value: "4 Years" },
+          { label: "Study Mode", value: "Full-Time / Blended Learning" },
+          { label: "Intake", value: "2026 Intake" },
+          { label: "Qualification Level", value: "Undergraduate Degree" },
+        ];
+
   const careerOutcomes =
     programme.title === "BSc Agriculture"
       ? [
@@ -49,6 +64,22 @@ export default function ProgrammePage({
         <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
           {programme.description}
         </p>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-4">
+          {facts.map((fact) => (
+            <div
+              key={fact.label}
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                {fact.label}
+              </p>
+              <p className="mt-2 text-lg font-bold text-slate-950">
+                {fact.value}
+              </p>
+            </div>
+          ))}
+        </div>
 
         <div className="mt-12 rounded-3xl bg-white p-8 shadow-lg border border-slate-100">
           <h2 className="text-2xl font-semibold text-slate-900 mb-6">
