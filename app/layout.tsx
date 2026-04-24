@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: "KPMU University College",
   description: "Premium higher education in Zambia",
+  verification: {
+    google: "x9IZ9YcqEp1AXhUeVrjRLSd5j3n0506bFfzwWBxW9Ow",
+  },
 };
 
 export default function RootLayout({
