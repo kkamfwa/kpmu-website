@@ -13,38 +13,42 @@ export default function ProgrammePage({
 }: {
   params: { slug: string };
 }) {
-  
-  const programme = programmes.find((p) =>
-  slugify(p.title).includes(params.slug)
-);
+  const programme = programmes.find(
+    (p) => slugify(p.title) === params.slug
+  );
 
-  if (!programme) return <div className="p-10">Programme not found</div>;
+  if (!programme) {
+    return <div className="p-10">Programme not found</div>;
+  }
 
   return (
-    <main className="pt-28 pb-20">
-      <section className="mx-auto max-w-5xl px-6">
+    <main className="pt-24 pb-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="max-w-5xl mx-auto px-6">
+        
+        {/* HEADER */}
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-sky-700">
           KPMU Programme
         </p>
 
-        <h1 className="text-4xl font-bold text-slate-950">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900">
           {programme.title}
         </h1>
 
-        <p className="mt-4 leading-7 text-white/90">
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
           {programme.description}
         </p>
 
-          <div className="mt-10 rounded-3xl bg-[#0B3D5C] p-8 text-white shadow-xl">
-          <h2 className="text-2xl font-semibold text-slate-950">
+        {/* WHAT YOU WILL STUDY */}
+        <div className="mt-12 rounded-3xl bg-white p-8 shadow-lg border border-slate-100">
+          <h2 className="text-2xl font-semibold text-slate-900 mb-6">
             What you will study
           </h2>
 
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+          <ul className="grid gap-4 md:grid-cols-2">
             {programme.items.map((item) => (
               <li
                 key={item}
-                className="rounded-2xl bg-slate-50 p-4 text-slate-700"
+                className="rounded-xl bg-slate-50 px-4 py-3 text-slate-700"
               >
                 {item}
               </li>
@@ -52,19 +56,23 @@ export default function ProgrammePage({
           </ul>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-slate-950 p-8 text-white">
-          <h2 className="text-2xl font-semibold">Why choose KPMU?</h2>
-          <p className="mt-4 leading-7 text-slate-200">
-            KPMU University College combines academic quality, practical
-            learning, AI-powered student support, and career-focused preparation
-            for Zambia&apos;s next generation of professionals.
+        {/* WHY KPMU */}
+        <div className="mt-12 rounded-3xl bg-[#0B3D5C] p-8 text-white shadow-xl">
+          <h2 className="text-2xl font-semibold mb-4">
+            Why choose KPMU?
+          </h2>
+
+          <p className="leading-7 text-white/90">
+            KPMU University College combines academic quality, practical learning,
+            AI-powered student support, and career-focused preparation for Zambia’s
+            next generation of professionals.
           </p>
 
           <a
             href="/admissions"
-            className="mt-6 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-slate-950"
+            className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-slate-900 hover:bg-slate-100 transition"
           >
-            Apply Now
+            Apply Now →
           </a>
         </div>
       </section>
