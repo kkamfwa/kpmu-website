@@ -64,12 +64,19 @@ export const programmes = [
     icon: Bot,
     items: ["Computer Science", "Data & AI Fundamentals", "Cybersecurity"]
   },
- {
-  title: "School of Agriculture",
+ 
+  {
+  title: "BSc Agriculture",
   description:
-    "Develop practical, modern agricultural professionals with expertise in crop production, agribusiness, and sustainable farming systems.",
+    "Study Agriculture in Zambia through a practical, career-focused degree covering crop production, agribusiness, sustainable farming systems, and modern agricultural technology.",
   icon: Sprout,
-  items: ["Agricultural Science", "Agribusiness Management", "Sustainable Farming Systems"]
+  items: [
+    "Crop Production",
+    "Agribusiness Management",
+    "Sustainable Farming Systems",
+    "Practical Farm-Based Learning",
+    "Career Pathways in Agriculture",
+  ],
 }
 ];
 
