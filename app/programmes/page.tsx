@@ -10,6 +10,7 @@ export default function ProgrammesPage() {
   return (
     <>
       <PageHero
+        variant="flagship"
         eyebrow="Programmes"
         title="Degrees and academic pathways designed for modern careers and meaningful impact"
         description="KPMU University College offers industry-aligned programmes that blend academic rigor, digital fluency, and practical relevance for Zambia's evolving economy."
@@ -42,4 +43,3 @@ export default function ProgrammesPage() {
     </>
   );
 }
-
