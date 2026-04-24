@@ -13,7 +13,10 @@ export default function ProgrammePage({
 }: {
   params: { slug: string };
 }) {
-  const programme = programmes.find((p) => slugify(p.title) === params.slug);
+  
+  const programme = programmes.find((p) =>
+  slugify(p.title).includes(params.slug)
+);
 
   if (!programme) return <div className="p-10">Programme not found</div>;
 
