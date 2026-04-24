@@ -23,8 +23,8 @@ export default function ProgrammePage({
 
   return (
     <main className="pt-24 pb-20 bg-gradient-to-b from-slate-50 to-white">
-      <section className="max-w-5xl mx-auto px-6">
-        
+      <section className="max-w-6xl mx-auto px-6">
+
         {/* HEADER */}
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-sky-700">
           KPMU Programme
@@ -48,7 +48,7 @@ export default function ProgrammePage({
             {programme.items.map((item) => (
               <li
                 key={item}
-                className="rounded-xl bg-slate-50 px-4 py-3 text-slate-700"
+                className="rounded-xl bg-slate-50 px-4 py-3 text-slate-700 shadow-sm hover:shadow-md transition"
               >
                 {item}
               </li>
@@ -57,24 +57,26 @@ export default function ProgrammePage({
         </div>
 
         {/* WHY KPMU */}
-        <div className="mt-12 rounded-3xl bg-[#0B3D5C] p-8 text-white shadow-xl">
+        <div className="mt-12 rounded-3xl bg-[#0B3D5C] p-10 text-white shadow-xl">
           <h2 className="text-2xl font-semibold mb-4">
             Why choose KPMU?
           </h2>
 
-          <p className="leading-7 text-white/90">
+          <p className="leading-7 text-white/90 max-w-3xl">
             KPMU University College combines academic quality, practical learning,
             AI-powered student support, and career-focused preparation for Zambia’s
             next generation of professionals.
           </p>
 
+          {/* BUTTON FIXED */}
           <a
             href="/admissions"
-            className="mt-6 inline-block rounded-full bg-white px-6 py-3 font-semibold text-slate-900 hover:bg-slate-100 transition"
+            className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-[#0B3D5C] hover:bg-slate-100 transition"
           >
             Apply Now →
           </a>
         </div>
+
       </section>
     </main>
   );
