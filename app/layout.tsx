@@ -1,7 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
 
-};
 export const metadata = {
   title: "KPMU University College | Top University in Zambia",
   description:"KPMU University College offers Agriculture, Computer Science, and Business degrees in Zambia. Apply now for the 2026 intake.",
