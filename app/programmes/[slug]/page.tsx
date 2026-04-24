@@ -24,13 +24,13 @@ export default function ProgrammePage({
       ? [
           { label: "Duration", value: "4 Years" },
           { label: "Study Mode", value: "Full-Time / Blended Learning" },
-          { label: "Intake", value: "2026 Intake" },
+          { label: "Intake", value: "2027 Intake" },
           { label: "Qualification Level", value: "Undergraduate Degree" },
         ]
       : [
           { label: "Duration", value: "4 Years" },
           { label: "Study Mode", value: "Full-Time / Blended Learning" },
-          { label: "Intake", value: "2026 Intake" },
+          { label: "Intake", value: "2027 Intake" },
           { label: "Qualification Level", value: "Undergraduate Degree" },
         ];
 
