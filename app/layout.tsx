@@ -44,7 +44,7 @@ export default function RootLayout({
                 </span>
               </Link>
 
-              <nav className="hidden items-center gap-8 text-sm text-white/90 md:flex">
+              <nav className="hidden items-center gap-6 text-sm text-white/90 md:flex">
                 <Link href="/" className="transition hover:text-white">
                   Home
                 </Link>
@@ -56,6 +56,9 @@ export default function RootLayout({
                 </Link>
                 <Link href="/admissions" className="transition hover:text-white">
                   Admissions
+                </Link>
+                <Link href="/student-portal" className="transition hover:text-white">
+                  Student Portal
                 </Link>
                 <Link
                   href="/learning-experience"
@@ -69,10 +72,10 @@ export default function RootLayout({
               </nav>
 
               <Link
-                href="/admissions"
+                href="/student-portal/login"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0b3b5d] transition hover:bg-white/90"
               >
-                Apply Now →
+                Portal Login →
               </Link>
             </div>
           </div>
