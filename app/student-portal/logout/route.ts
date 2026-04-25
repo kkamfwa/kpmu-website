@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { clearPortalSession } from "@/lib/portal-auth";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   clearPortalSession();
-  return NextResponse.redirect(new URL("/student-portal/login", process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"));
+  return NextResponse.redirect(new URL("/student-portal/login", request.url));
 }
