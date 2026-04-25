@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/programmes",
     "/admissions",
     "/learning-experience",
+    "/student-portal",
     "/contact",
   ];
 
