@@ -9,6 +9,7 @@ export type PortalUser = {
   name: string;
   email: string;
   role: PortalRole;
+  mustUpdateAccess?: boolean;
 };
 
 const COOKIE_NAME = "kpmu_portal_session";
@@ -20,12 +21,14 @@ const demoUsers: Array<PortalUser & { code: string }> = [
     email: process.env.PORTAL_STUDENT_EMAIL ?? "student@kpmuc.com",
     code: process.env.PORTAL_STUDENT_PASSWORD ?? "KPMU2026!",
     role: "student",
+    mustUpdateAccess: false,
   },
   {
     name: "KPMU Portal Admin",
     email: process.env.PORTAL_ADMIN_EMAIL ?? "admin@kpmuc.com",
     code: process.env.PORTAL_ADMIN_PASSWORD ?? "KPMUAdmin2026!",
     role: "admin",
+    mustUpdateAccess: false,
   },
 ];
 
@@ -75,6 +78,7 @@ export async function authenticatePortalUser(email: string, accessCode: string) 
           name: dbUser.name,
           email: dbUser.email,
           role: dbUser.role as PortalRole,
+          mustUpdateAccess: dbUser.must_update_access,
         };
       }
     }
