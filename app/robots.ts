@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://www.kpmu.edu.zm/sitemap.xml"
+    sitemap: "https://www.kpmuc.com/sitemap.xml"
   };
 }
 

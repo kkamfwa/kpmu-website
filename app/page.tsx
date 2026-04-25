@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import {
   ArrowRight,
   Bot,
@@ -9,6 +10,14 @@ import {
   Sparkles,
 } from "lucide-react";
 import { ProgrammeGrid } from "@/components/programme-grid";
+
+
+export const metadata: Metadata = {
+  title: "Home - KPMU University College",
+  openGraph: {
+    title: "Home - KPMU University College",
+  },
+};
 
 const highlights = [
   {
@@ -73,10 +82,6 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl items-center px-6 pb-20 pt-36 md:pb-24 md:pt-40">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white/95 backdrop-blur-md">
-              HEA accreditation readiness built into the institution strategy
-            </div>
-
             <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.93] md:text-7xl">
               KPMU University College
             </h1>
