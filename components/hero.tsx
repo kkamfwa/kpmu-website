@@ -9,7 +9,7 @@ export function Hero() {
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-ocean/15 bg-white/80 px-4 py-2 text-sm font-medium text-ocean shadow-sm">
             <ShieldCheck className="h-4 w-4" />
-            HEA accreditation readiness built into the institution strategy
+            Academic Excellence. Practical Impact.
           </div>
           <h1 className="mt-8 max-w-3xl font-display text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
             KPMU University College

@@ -2,7 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "KPMU University College | Top University in Zambia",
+  title: "KPMU University College",
   description:"KPMU University College offers Agriculture, Computer Science, and Business degrees in Zambia. Apply now for the 2026 intake.",
   keywords: [
     "University Zambia",
@@ -15,7 +15,7 @@ export const metadata = {
     google: "x9IZ9YcqEp1AXhUeVrjRLSd5j3n0506bFfzwWBxW9Ow",
   },
   openGraph: {
-    title: "KPMU University College | Top University in Zambia",
+    title: "KPMU University College",
     description:
       "Premium higher education in Zambia offering Agriculture, Computer Science, and Business programmes.",
     url: "https://www.kpmuc.com",
