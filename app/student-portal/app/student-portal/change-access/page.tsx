@@ -1,21 +1,34 @@
 import { redirect } from "next/navigation";
 import { hash } from "bcryptjs";
-import { getPortalSession } from "@/lib/portal-auth";
+import { getPortalSession, setPortalSession } from "@/lib/portal-auth";
 import { updatePortalUserCredential } from "@/lib/db";
 
 async function updateAction(formData: FormData) {
   "use server";
 
-  const email = String(formData.get("email"));
-  const newValue = String(formData.get("newValue"));
+  const email = String(formData.get("email") ?? "");
+  const newValue = String(formData.get("newValue") ?? "");
+  const name = String(formData.get("name") ?? "");
+  const role = String(formData.get("role") ?? "student");
 
   if (!email || !newValue) {
-    redirect("/student-portal/change-access?error=Missing details");
+    redirect("/student-portal/change-access");
   }
 
   const newHash = await hash(newValue, 10);
 
   await updatePortalUserCredential(email, newHash);
+
+  setPortalSession({
+    name,
+    email,
+    role: role as any,
+    mustUpdateAccess: false,
+  });
+
+  if (role === "admin") {
+    redirect("/student-portal/admin");
+  }
 
   redirect("/student-portal/dashboard");
 }
@@ -27,10 +40,6 @@ export default function ChangeAccessPage() {
     redirect("/student-portal/login");
   }
 
-  if (!user.mustUpdateAccess) {
-    redirect("/student-portal/dashboard");
-  }
-
   return (
     <main className="px-6 py-24">
       <div className="mx-auto max-w-md">
@@ -39,11 +48,13 @@ export default function ChangeAccessPage() {
         </h1>
 
         <p className="mt-4 text-slate-600">
-          You must change your temporary access before continuing.
+          Please create your new private access code before continuing.
         </p>
 
         <form action={updateAction} className="mt-8 space-y-4">
           <input type="hidden" name="email" value={user.email} />
+          <input type="hidden" name="name" value={user.name} />
+          <input type="hidden" name="role" value={user.role} />
 
           <input
             name="newValue"
