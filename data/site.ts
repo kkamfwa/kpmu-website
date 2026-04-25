@@ -17,6 +17,7 @@ export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Programmes", href: "/programmes" },
   { label: "Admissions", href: "/admissions" },
+  { label: "Student Portal", href: "/student-portal" },
   { label: "Learning Experience", href: "/learning-experience" },
   { label: "Contact", href: "/contact" }
 ];
@@ -119,4 +120,3 @@ export const contactDetails = [
   { label: "Phone", value: "+260 572 194 480" },
   { label: "Location", value: "Lusaka, Zambia" }
 ];
-
