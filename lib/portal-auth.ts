@@ -1,7 +1,9 @@
 import { createHmac, timingSafeEqual } from "crypto";
+import { compare } from "bcryptjs";
 import { cookies } from "next/headers";
+import { findPortalUser } from "@/lib/db";
 
-export type PortalRole = "student" | "admin";
+export type PortalRole = "student" | "admin" | "registry" | "finance" | "lecturer";
 
 export type PortalUser = {
   name: string;
@@ -12,17 +14,17 @@ export type PortalUser = {
 const COOKIE_NAME = "kpmu_portal_session";
 const SESSION_DAYS = 1;
 
-const demoUsers: Array<PortalUser & { password: string }> = [
+const demoUsers: Array<PortalUser & { code: string }> = [
   {
     name: "KPMU Demo Student",
     email: process.env.PORTAL_STUDENT_EMAIL ?? "student@kpmuc.com",
-    password: process.env.PORTAL_STUDENT_PASSWORD ?? "KPMU2026!",
+    code: process.env.PORTAL_STUDENT_PASSWORD ?? "KPMU2026!",
     role: "student",
   },
   {
     name: "KPMU Portal Admin",
     email: process.env.PORTAL_ADMIN_EMAIL ?? "admin@kpmuc.com",
-    password: process.env.PORTAL_ADMIN_PASSWORD ?? "KPMUAdmin2026!",
+    code: process.env.PORTAL_ADMIN_PASSWORD ?? "KPMUAdmin2026!",
     role: "admin",
   },
 ];
@@ -59,13 +61,32 @@ function decodeSession(value?: string): PortalUser | null {
   }
 }
 
-export async function authenticatePortalUser(email: string, password: string) {
+export async function authenticatePortalUser(email: string, accessCode: string) {
   const normalizedEmail = email.trim().toLowerCase();
-  const user = demoUsers.find((item) => item.email.toLowerCase() === normalizedEmail);
 
-  if (!user || user.password !== password) return null;
+  try {
+    const dbUser = await findPortalUser(normalizedEmail);
 
-  const { password: _password, ...safeUser } = user;
+    if (dbUser) {
+      const isValid = await compare(accessCode, dbUser.credential_hash);
+
+      if (isValid) {
+        return {
+          name: dbUser.name,
+          email: dbUser.email,
+          role: dbUser.role as PortalRole,
+        };
+      }
+    }
+  } catch {
+    // Keep demo fallback available if the database is temporarily unavailable.
+  }
+
+  const demoUser = demoUsers.find((item) => item.email.toLowerCase() === normalizedEmail);
+
+  if (!demoUser || demoUser.code !== accessCode) return null;
+
+  const { code: _code, ...safeUser } = demoUser;
   return safeUser;
 }
 
