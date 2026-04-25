@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getPortalSession } from "@/lib/portal-auth";
-import { BarChart3, ClipboardList, CreditCard, FileText, GraduationCap, ShieldCheck, UserPlus, UsersRound } from "lucide-react";
+import { BarChart3, ClipboardList, CreditCard, FileText, GraduationCap, ShieldCheck, UserCog, UserPlus, UsersRound } from "lucide-react";
 
 const stats = [
   { label: "Applications", value: "24", note: "Demo admissions pipeline", icon: ClipboardList },
@@ -52,6 +52,10 @@ export default function AdminPanelPage() {
           </div>
 
           <div className="flex flex-wrap gap-3">
+            <Link href="/student-portal/admin/users" className="inline-flex items-center gap-2 rounded-full bg-[#0b3b5d] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#092f4a]">
+              <UserCog className="h-4 w-4" />
+              User Management
+            </Link>
             <Link href="/student-portal/dashboard" className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">
               Student View
             </Link>
@@ -86,10 +90,10 @@ export default function AdminPanelPage() {
                 <h2 className="text-2xl font-semibold text-slate-950">Student Records</h2>
                 <p className="mt-2 text-sm text-slate-500">Demo register for the next database phase.</p>
               </div>
-              <button className="inline-flex items-center gap-2 rounded-full bg-[#0b3b5d] px-5 py-3 text-sm font-semibold text-white">
+              <Link href="/student-portal/admin/users" className="inline-flex items-center gap-2 rounded-full bg-[#0b3b5d] px-5 py-3 text-sm font-semibold text-white">
                 <UserPlus className="h-4 w-4" />
-                Add Student Soon
-              </button>
+                Add / Manage Users
+              </Link>
             </div>
 
             <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
