@@ -8,11 +8,20 @@ async function updateAction(formData: FormData) {
 
   const email = String(formData.get("email") ?? "");
   const newValue = String(formData.get("newValue") ?? "");
+  const confirmValue = String(formData.get("confirmValue") ?? "");
   const name = String(formData.get("name") ?? "");
   const role = String(formData.get("role") ?? "student");
 
-  if (!email || !newValue) {
-    redirect("/student-portal/change-access");
+  if (!email || !newValue || !confirmValue) {
+    redirect("/student-portal/change-access?error=Missing details");
+  }
+
+  if (newValue !== confirmValue) {
+    redirect("/student-portal/change-access?error=Entries do not match");
+  }
+
+  if (newValue.length < 8) {
+    redirect("/student-portal/change-access?error=Access must be at least 8 characters");
   }
 
   const newHash = await hash(newValue, 10);
@@ -33,7 +42,11 @@ async function updateAction(formData: FormData) {
   redirect("/student-portal/dashboard");
 }
 
-export default function ChangeAccessPage() {
+export default function ChangeAccessPage({
+  searchParams,
+}: {
+  searchParams?: { error?: string };
+}) {
   const user = getPortalSession();
 
   if (!user) {
@@ -48,8 +61,14 @@ export default function ChangeAccessPage() {
         </h1>
 
         <p className="mt-4 text-slate-600">
-          Please create your new private access code before continuing.
+          For security, create a new private access code before continuing.
         </p>
+
+        {searchParams?.error && (
+          <div className="mt-4 rounded-xl bg-red-100 p-3 text-sm text-red-700">
+            {searchParams.error}
+          </div>
+        )}
 
         <form action={updateAction} className="mt-8 space-y-4">
           <input type="hidden" name="email" value={user.email} />
@@ -61,6 +80,14 @@ export default function ChangeAccessPage() {
             type="password"
             required
             placeholder="New access code"
+            className="w-full rounded-xl border p-3"
+          />
+
+          <input
+            name="confirmValue"
+            type="password"
+            required
+            placeholder="Confirm new access code"
             className="w-full rounded-xl border p-3"
           />
 
